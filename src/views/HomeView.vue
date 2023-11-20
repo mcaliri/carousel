@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <CarouselComponent class="carousel" v-slot="{ currentSlide }">
+    <CarouselComponent :navigation="true" :pagination="true" :startAutoplay="true" :timeoutDuration="5000" class="carousel" v-slot="{ currentSlide }">
       <SlideComponent v-for="(slide, index) in carouselSlider" :key="index">
         <div v-show="currentSlide === index + 1" class="slide-info">
             <img :src="require(`../assets/images/${slide}.jpg`)" alt="slide" />
@@ -31,8 +31,8 @@ export default {
 <style scoped>
 .carousel {
     position: relative;
-  max-height: 100vh;
-  height: 100vh;
+  max-height: 50vh;
+  height: 50vh;
 }
 .slide-info{
     position: absolute;
